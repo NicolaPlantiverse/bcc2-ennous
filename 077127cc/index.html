@@ -26,6 +26,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:cent
 .brand b{font-size:16px;letter-spacing:.08em}
 .brand span{font-size:10.5px;color:var(--txt2);letter-spacing:.1em}
 .demo-badge{font-size:10px;letter-spacing:.13em;color:var(--forest);border:1px solid rgba(63,174,106,.35);border-radius:999px;padding:5px 12px;margin-left:auto;white-space:nowrap}
+#lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(255,255,255,.03)}
+#lang button{appearance:none;border:0;background:transparent;color:var(--txt3);font:inherit;font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 12px;cursor:pointer;transition:.2s}
+#lang button.on{background:var(--forest);color:#04130a}
 section{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:100px 30px}
 .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--forest);margin-bottom:18px;font-weight:600}
 h1{font-size:clamp(38px,6vw,72px);font-weight:700;letter-spacing:-.03em;line-height:1.05}
@@ -84,60 +87,61 @@ footer{border-top:1px solid var(--line);padding:34px 30px;font-size:11px;color:v
 <div class="bgfx"></div>
 <nav>
   <a class="brand" href="#"><b>PLANTIVERSE</b><span>MOTORE ENNOUS</span></a>
-  <span class="demo-badge">Demo per BCC Veneta · v2</span>
+  <span class="demo-badge" data-t="navbadge">Demo per BCC Veneta · v2</span>
+  <div id="lang"><button id="lit" class="on" type="button">IT</button><button id="len" type="button">EN</button></div>
 </nav>
 
 <section id="hero">
-  <div class="kicker rv">Ipotesi dimostrativa, costruita su informazioni pubbliche</div>
-  <h1 class="rv d1">Il vostro territorio, letto come una rete.</h1>
-  <p class="lead rv d2" style="margin-top:20px">Sede a Fara Vicentino, radici cooperative, filiali distribuite su sei province tra Veneto, Lombardo e Trentino. Ipotizziamo che una rete di intelligenze artificiali orchestrata dai dati legga questa complessità, decisione per decisione.</p>
+  <div class="kicker rv" data-t="k0">Ipotesi dimostrativa, costruita su informazioni pubbliche</div>
+  <h1 class="rv d1" data-t="h0">Il vostro territorio, letto come una rete.</h1>
+  <p class="lead rv d2" data-t="l0" style="margin-top:20px">Sede a Fara Vicentino, radici cooperative, filiali distribuite su sei province tra Veneto, Lombardo e Trentino. Ipotizziamo che una rete di intelligenze artificiali orchestrata dai dati legga questa complessità, decisione per decisione.</p>
   <div class="hero-stats rv d3">
-    <div class="hstat"><div class="n">6</div><div class="l">province con filiali: Mantova, Padova, Trento, Venezia, Verona, Vicenza <span class="bdg real">dato pubblico</span></div></div>
-    <div class="hstat"><div class="n">70+</div><div class="l">comuni serviti con uno sportello <span class="bdg real">dato pubblico</span></div></div>
-    <div class="hstat"><div class="n">1</div><div class="l">Gruppo Bancario Cooperativo Iccrea di appartenenza <span class="bdg real">dato pubblico</span></div></div>
-    <div class="hstat"><div class="n">&gt;85%</div><div class="l">rilevamento pre-sintomatico nel dominio biologico, il nostro <span class="bdg meas">misurato · rete</span></div></div>
+    <div class="hstat"><div class="n">6</div><div class="l" data-t="s1"></div></div>
+    <div class="hstat"><div class="n">70+</div><div class="l" data-t="s2"></div></div>
+    <div class="hstat"><div class="n">1</div><div class="l" data-t="s3"></div></div>
+    <div class="hstat"><div class="n">&gt;85%</div><div class="l" data-t="s4"></div></div>
   </div>
-  <div class="scroll-hint rv">Scorri ↓</div>
+  <div class="scroll-hint rv" data-t="sh">Scorri ↓</div>
 </section>
 
 <section id="legenda">
-  <div class="kicker rv">Come leggere questa pagina</div>
-  <h2 class="rv d1">Tre livelli di evidenza, mai confusi tra loro.</h2>
-  <p class="lead rv d2">Questa non è una presentazione delle vostre capacità: è la nostra ipotesi su come si compongono, costruita leggendo il vostro sito pubblico. Ogni numero porta un&#8217;etichetta che ne dichiara l&#8217;origine.</p>
+  <div class="kicker rv" data-t="k1">Come leggere questa pagina</div>
+  <h2 class="rv d1" data-t="h1">Tre livelli di evidenza, mai confusi tra loro.</h2>
+  <p class="lead rv d2" data-t="l1">Questa non è una presentazione delle vostre capacità: è la nostra ipotesi su come si compongono, costruita leggendo il vostro sito pubblico. Ogni numero porta un&#8217;etichetta che ne dichiara l&#8217;origine.</p>
   <div class="disc rv d3">
-    <b>Sui dati.</b> I dati contrassegnati <span class="bdg real">dato pubblico</span> vengono dal sito bccveneta.it (sede, territorio, appartenenza al Gruppo, prodotti). I dati <span class="bdg meas">misurato · rete</span> vengono dal dominio in cui abbiamo calibrato Ennous su dati reali, quello biologico con Plantiverse. Tutto il resto, le combinazioni di motori, gli esempi di decisione, i numeri di dettaglio, è <span class="bdg sim">ipotesi dimostrativa</span>: costruito per mostrare come funziona il metodo, non misurato su di voi. Ogni ipotesi resta <span class="bdg val">da validare sui vostri dati</span> prima di diventare una promessa.
+    <span data-t="disc"><b>Sui dati.</b> I dati contrassegnati <span class="bdg real">dato pubblico</span> vengono dal sito bccveneta.it (sede, territorio, appartenenza al Gruppo, prodotti). I dati <span class="bdg meas">misurato · rete</span> vengono dal dominio in cui abbiamo calibrato Ennous su dati reali, quello biologico con Plantiverse. Tutto il resto, le combinazioni di motori, gli esempi di decisione, i numeri di dettaglio, è <span class="bdg sim">ipotesi dimostrativa</span>: costruito per mostrare come funziona il metodo, non misurato su di voi. Ogni ipotesi resta <span class="bdg val">da validare sui vostri dati</span> prima di diventare una promessa.</span>
     <div class="dleg">
-      <span class="dl"><i style="background:#7fb6d4"></i>dato pubblico dal vostro sito</span>
-      <span class="dl"><i style="background:var(--forest)"></i>misurato, dominio biologico</span>
-      <span class="dl"><i style="background:var(--gold)"></i>ipotesi dimostrativa</span>
-      <span class="dl"><i style="background:var(--red)"></i>da validare sui vostri dati</span>
+      <span class="dl"><i style="background:#7fb6d4"></i><span data-t="dl1">dato pubblico dal vostro sito</span></span>
+      <span class="dl"><i style="background:var(--forest)"></i><span data-t="dl2">misurato, dominio biologico</span></span>
+      <span class="dl"><i style="background:var(--gold)"></i><span data-t="dl3">ipotesi dimostrativa</span></span>
+      <span class="dl"><i style="background:var(--red)"></i><span data-t="dl4">da validare sui vostri dati</span></span>
     </div>
   </div>
 </section>
 
 <section id="territorio">
-  <div class="kicker rv">01 · Il territorio</div>
-  <h2 class="rv d1">Sei province, oltre settanta comuni, una sola rete.</h2>
-  <p class="lead rv d2">Ogni filiale legge il proprio territorio: domanda di credito diversa, tessuto produttivo diverso, priorità diverse tra un comune del vicentino e uno del veronese. <span class="bdg real">dato pubblico</span></p>
+  <div class="kicker rv" data-t="k2">01 · Il territorio</div>
+  <h2 class="rv d1" data-t="h2">Sei province, oltre settanta comuni, una sola rete.</h2>
+  <p class="lead rv d2" data-t="l2"></p>
   <div class="chips rv d3">
-    <span class="chip"><b>Vicenza</b> · sede legale a Fara Vicentino</span>
-    <span class="chip"><b>Padova</b> · sede amministrativa</span>
+    <span class="chip"><b>Vicenza</b> · <span data-t="c1">sede legale a Fara Vicentino</span></span>
+    <span class="chip"><b>Padova</b> · <span data-t="c2">sede amministrativa</span></span>
     <span class="chip"><b>Verona</b></span>
     <span class="chip"><b>Venezia</b></span>
     <span class="chip"><b>Mantova</b></span>
     <span class="chip"><b>Trento</b></span>
   </div>
-  <p class="rw-note" style="margin-top:24px;max-width:720px">Ipotizziamo una rete che legga ogni filiale con la stessa grammatica, senza appiattire le differenze tra territori: la stessa istruttoria di fido, a Vicenza o a Mantova, parte dagli stessi criteri ma pesa in modo diverso ciò che trova. <span class="bdg sim">ipotesi dimostrativa</span></p>
+  <p class="rw-note" data-t="ter-note" style="margin-top:24px;max-width:720px"></p>
 </section>
 
 <section id="reasoning">
-  <div class="kicker rv">02 · Le decisioni</div>
-  <h2 class="rv d1">Scegliete una decisione. La rete si compone in modo diverso.</h2>
-  <p class="lead rv d2">I quattro esempi qui sotto nascono dai prodotti che offrite oggi, secondo il vostro sito: fido alle imprese, mutui ESG, leasing e factoring, il Bilancio di Coerenza e Missione. <span class="bdg real">dato pubblico</span> Il modo in cui la rete li legge è la nostra ipotesi. <span class="bdg sim">ipotesi dimostrativa</span></p>
+  <div class="kicker rv" data-t="k3">02 · Le decisioni</div>
+  <h2 class="rv d1" data-t="h3">Scegliete una decisione. La rete si compone in modo diverso.</h2>
+  <p class="lead rv d2" data-t="l3"></p>
   <div class="obj-tabs rv d3" id="objTabs"></div>
   <div class="rw-stage">
     <div class="rw-panel">
-      <div class="rw-head"><span class="t">Motori accesi</span><span class="rw-count"><b id="rwCount">0</b> / 220</span></div>
+      <div class="rw-head"><span class="t" data-t="rwHead1">Motori accesi</span><span class="rw-count"><b id="rwCount">0</b> / 220</span></div>
       <div id="engGrid"></div>
       <p class="rw-note" id="rwNote"></p>
     </div>
@@ -149,14 +153,14 @@ footer{border-top:1px solid var(--line);padding:34px 30px;font-size:11px;color:v
 </section>
 
 <section class="close">
-  <div class="kicker rv">Chiusura</div>
-  <h2 class="rv d1">Un&#8217;ipotesi che vogliamo verificare con voi, non un risultato.</h2>
-  <p class="lead rv d2">Tutto quello che avete letto qui è costruito su informazioni pubbliche e su un metodo misurato altrove. La sua forma su BCC Veneta la conosceremo solo lavorando insieme, sui vostri dati reali, con un pilota piccolo e misurabile.</p>
-  <a class="btn rv d3" href="mailto:info@plantiverse.it?subject=Ennous%20per%20BCC%20Veneta">Parliamone</a>
-  <a class="btn s rv d3" href="mailto:info@plantiverse.it">Scrivici</a>
+  <div class="kicker rv" data-t="k4">Chiusura</div>
+  <h2 class="rv d1" data-t="h4">Un&#8217;ipotesi che vogliamo verificare con voi, non un risultato.</h2>
+  <p class="lead rv d2" data-t="l4">Tutto quello che avete letto qui è costruito su informazioni pubbliche e su un metodo misurato altrove. La sua forma su BCC Veneta la conosceremo solo lavorando insieme, sui vostri dati reali, con un pilota piccolo e misurabile.</p>
+  <a class="btn rv d3" href="mailto:info@plantiverse.it?subject=Ennous%20per%20BCC%20Veneta" data-t="cta1">Parliamone</a>
+  <a class="btn s rv d3" href="mailto:info@plantiverse.it" data-t="cta2">Scrivici</a>
 </section>
 
-<footer>
+<footer data-t="foot">
   Plantiverse · Il team che sviluppa Ennous. Dimostrazione a scopo illustrativo, costruita su informazioni pubbliche di BCC Veneta (bccveneta.it). Nessun dato interno della banca è stato utilizzato. © 2026 Plantiverse.
 </footer>
 
@@ -165,24 +169,85 @@ footer{border-top:1px solid var(--line);padding:34px 30px;font-size:11px;color:v
 function $(s){return document.querySelector(s);}
 function $$(s){return [].slice.call(document.querySelectorAll(s));}
 
+var T={
+ navbadge:{it:"Demo per BCC Veneta · v2",en:"Demo for BCC Veneta · v2"},
+ k0:{it:"Ipotesi dimostrativa, costruita su informazioni pubbliche",en:"Demonstrative hypothesis, built from public information"},
+ h0:{it:"Il vostro territorio, letto come una rete.",en:"Your territory, read as a network."},
+ l0:{it:"Sede a Fara Vicentino, radici cooperative, filiali distribuite su sei province tra Veneto, Lombardo e Trentino. Ipotizziamo che una rete di intelligenze artificiali orchestrata dai dati legga questa complessità, decisione per decisione.",
+     en:"Headquartered in Fara Vicentino, cooperative roots, branches spread across six provinces between Veneto, Lombardy and Trentino. We hypothesise that a network of artificial intelligences orchestrated by data reads this complexity, decision by decision."},
+ s1:{it:'province con filiali: Mantova, Padova, Trento, Venezia, Verona, Vicenza <span class="bdg real">dato pubblico</span>',en:'provinces with branches: Mantova, Padova, Trento, Venezia, Verona, Vicenza <span class="bdg real">public data</span>'},
+ s2:{it:'comuni serviti con uno sportello <span class="bdg real">dato pubblico</span>',en:'municipalities served with a branch <span class="bdg real">public data</span>'},
+ s3:{it:'Gruppo Bancario Cooperativo Iccrea di appartenenza <span class="bdg real">dato pubblico</span>',en:'Iccrea Cooperative Banking Group it belongs to <span class="bdg real">public data</span>'},
+ s4:{it:'rilevamento pre-sintomatico nel dominio biologico, il nostro <span class="bdg meas">misurato · rete</span>',en:'pre-symptomatic detection in the biological domain, ours <span class="bdg meas">measured · network</span>'},
+ sh:{it:"Scorri ↓",en:"Scroll ↓"},
+ k1:{it:"Come leggere questa pagina",en:"How to read this page"},
+ h1:{it:"Tre livelli di evidenza, mai confusi tra loro.",en:"Three levels of evidence, never mixed together."},
+ l1:{it:"Questa non è una presentazione delle vostre capacità: è la nostra ipotesi su come si compongono, costruita leggendo il vostro sito pubblico. Ogni numero porta un’etichetta che ne dichiara l’origine.",
+     en:"This is not a presentation of your capabilities: it is our hypothesis on how they come together, built by reading your public website. Every number carries a label that declares its origin."},
+ disc:{it:"<b>Sui dati.</b> I dati contrassegnati <span class=\"bdg real\">dato pubblico</span> vengono dal sito bccveneta.it (sede, territorio, appartenenza al Gruppo, prodotti). I dati <span class=\"bdg meas\">misurato · rete</span> vengono dal dominio in cui abbiamo calibrato Ennous su dati reali, quello biologico con Plantiverse. Tutto il resto, le combinazioni di motori, gli esempi di decisione, i numeri di dettaglio, è <span class=\"bdg sim\">ipotesi dimostrativa</span>: costruito per mostrare come funziona il metodo, non misurato su di voi. Ogni ipotesi resta <span class=\"bdg val\">da validare sui vostri dati</span> prima di diventare una promessa.",
+       en:"<b>On the data.</b> Data marked <span class=\"bdg real\">public data</span> comes from the bccveneta.it website (headquarters, territory, Group membership, products). Data marked <span class=\"bdg meas\">measured · network</span> comes from the domain where we calibrated Ennous on real data, the biological one with Plantiverse. Everything else, the engine combinations, the decision examples, the detailed figures, is <span class=\"bdg sim\">demonstrative hypothesis</span>: built to show how the method works, not measured on you. Every hypothesis remains <span class=\"bdg val\">to validate on your data</span> before it becomes a promise."},
+ dl1:{it:"dato pubblico dal vostro sito",en:"public data from your website"},
+ dl2:{it:"misurato, dominio biologico",en:"measured, biological domain"},
+ dl3:{it:"ipotesi dimostrativa",en:"demonstrative hypothesis"},
+ dl4:{it:"da validare sui vostri dati",en:"to validate on your data"},
+ bSim:{it:"ipotesi dimostrativa",en:"demonstrative hypothesis"},
+ k2:{it:"01 · Il territorio",en:"01 · The territory"},
+ h2:{it:"Sei province, oltre settanta comuni, una sola rete.",en:"Six provinces, over seventy municipalities, one network."},
+ l2:{it:'Ogni filiale legge il proprio territorio: domanda di credito diversa, tessuto produttivo diverso, priorità diverse tra un comune del vicentino e uno del veronese. <span class="bdg real">dato pubblico</span>',
+     en:'Every branch reads its own territory: different credit demand, different productive fabric, different priorities between a municipality near Vicenza and one near Verona. <span class="bdg real">public data</span>'},
+ c1:{it:"sede legale a Fara Vicentino",en:"registered office in Fara Vicentino"},
+ c2:{it:"sede amministrativa",en:"administrative office"},
+ "ter-note":{it:'Ipotizziamo una rete che legga ogni filiale con la stessa grammatica, senza appiattire le differenze tra territori: la stessa istruttoria di fido, a Vicenza o a Mantova, parte dagli stessi criteri ma pesa in modo diverso ciò che trova. <span class="bdg sim">ipotesi dimostrativa</span>',
+     en:'We hypothesise a network that reads every branch with the same grammar, without flattening the differences between territories: the same credit application review, in Vicenza or in Mantova, starts from the same criteria but weighs what it finds differently. <span class="bdg sim">demonstrative hypothesis</span>'},
+ k3:{it:"02 · Le decisioni",en:"02 · The decisions"},
+ h3:{it:"Scegliete una decisione. La rete si compone in modo diverso.",en:"Choose a decision. The network composes itself differently."},
+ l3:{it:'I quattro esempi qui sotto nascono dai prodotti che offrite oggi, secondo il vostro sito: fido alle imprese, mutui ESG, leasing e factoring, il Bilancio di Coerenza e Missione. <span class="bdg real">dato pubblico</span> Il modo in cui la rete li legge è la nostra ipotesi. <span class="bdg sim">ipotesi dimostrativa</span>',
+     en:'The four examples below come from the products you offer today, according to your website: credit to businesses, ESG mortgages, leasing and factoring, the Coherence and Mission Report. <span class="bdg real">public data</span> The way the network reads them is our hypothesis. <span class="bdg sim">demonstrative hypothesis</span>'},
+ rwHead1:{it:"Motori accesi",en:"Engines lit"},
+ k4:{it:"Chiusura",en:"Closing"},
+ h4:{it:"Un’ipotesi che vogliamo verificare con voi, non un risultato.",en:"A hypothesis we want to verify with you, not a result."},
+ l4:{it:"Tutto quello che avete letto qui è costruito su informazioni pubbliche e su un metodo misurato altrove. La sua forma su BCC Veneta la conosceremo solo lavorando insieme, sui vostri dati reali, con un pilota piccolo e misurabile.",
+     en:"Everything you have read here is built on public information and on a method measured elsewhere. Its form for BCC Veneta we will know only by working together, on your real data, with a small and measurable pilot."},
+ cta1:{it:"Parliamone",en:"Talk to us"},
+ cta2:{it:"Scrivici",en:"Write to us"},
+ foot:{it:"Plantiverse · Il team che sviluppa Ennous. Dimostrazione a scopo illustrativo, costruita su informazioni pubbliche di BCC Veneta (bccveneta.it). Nessun dato interno della banca è stato utilizzato. © 2026 Plantiverse.",
+       en:"Plantiverse · The team that develops Ennous. Demonstration for illustration purposes, built on public information from BCC Veneta (bccveneta.it). No internal data from the bank was used. © 2026 Plantiverse."}
+};
+
 var OBJS=[
- {name:"Istruttoria di fido imprese",ic:"◆",n:34,note:"Ipotizziamo una lettura che raccolga i segnali rilevanti su un&#8217;impresa richiedente e prepari la base per la decisione umana, senza sostituirla.",
-  list:["<b>Input ipotizzati</b> · bilanci, centrale rischi, storico di rapporto","<b>Output ipotizzato</b> · sintesi ordinata per chi delibera, non un punteggio automatico","<b>Prodotto reale collegato</b> · Finanziamenti, Leasing, Factoring (dato pubblico)"]},
- {name:"Mutuo ESG",ic:"◈",n:22,note:"Ipotizziamo una rete che leghi i requisiti del mutuo ESG a evidenze verificabili, invece che a un&#8217;autodichiarazione del cliente.",
-  list:["<b>Input ipotizzati</b> · classe energetica, dati di consumo, documentazione tecnica","<b>Output ipotizzato</b> · traccia coerente tra requisito dichiarato e requisito verificato","<b>Prodotto reale collegato</b> · Mutui ESG, partnership Legambiente (dato pubblico)"]},
- {name:"Leasing e factoring",ic:"▲",n:27,note:"Ipotizziamo una lettura che segua la fornitura nel tempo, non solo al momento della delibera, segnalando scostamenti rispetto a quanto previsto.",
-  list:["<b>Input ipotizzati</b> · piano di rientro, stato dei pagamenti, garanzie","<b>Output ipotizzato</b> · segnalazione precoce di scostamenti, non una decisione automatica","<b>Prodotto reale collegato</b> · Leasing, Factoring (dato pubblico)"]},
- {name:"Bilancio di Coerenza e Missione",ic:"●",n:19,note:"Ipotizziamo una rete che raccolga in continuo le evidenze che oggi confluiscono nel Bilancio di Coerenza, invece di ricostruirle a fine anno.",
-  list:["<b>Input ipotizzati</b> · iniziative territoriali, dati di impatto, rendicontazione ESG","<b>Output ipotizzato</b> · traccia verificabile, pronta per la rendicontazione periodica","<b>Prodotto reale collegato</b> · Bilancio di Coerenza e Missione (dato pubblico)"]}
+ {name:"Istruttoria di fido imprese",name_en:"Business credit application review",ic:"◆",n:34,
+  note:"Ipotizziamo una lettura che raccolga i segnali rilevanti su un&#8217;impresa richiedente e prepari la base per la decisione umana, senza sostituirla.",
+  note_en:"We hypothesise a reading that gathers the relevant signals on a requesting business and prepares the basis for the human decision, without replacing it.",
+  list:["<b>Input ipotizzati</b> · bilanci, centrale rischi, storico di rapporto","<b>Output ipotizzato</b> · sintesi ordinata per chi delibera, non un punteggio automatico","<b>Prodotto reale collegato</b> · Finanziamenti, Leasing, Factoring (dato pubblico)"],
+  list_en:["<b>Hypothesised input</b> · financial statements, central credit register, relationship history","<b>Hypothesised output</b> · ordered summary for the resolving body, not an automatic score","<b>Related real product</b> · Financing, Leasing, Factoring (public data)"]},
+ {name:"Mutuo ESG",name_en:"ESG mortgage",ic:"◈",n:22,
+  note:"Ipotizziamo una rete che leghi i requisiti del mutuo ESG a evidenze verificabili, invece che a un&#8217;autodichiarazione del cliente.",
+  note_en:"We hypothesise a network that ties ESG mortgage requirements to verifiable evidence, instead of a client self-declaration.",
+  list:["<b>Input ipotizzati</b> · classe energetica, dati di consumo, documentazione tecnica","<b>Output ipotizzato</b> · traccia coerente tra requisito dichiarato e requisito verificato","<b>Prodotto reale collegato</b> · Mutui ESG, partnership Legambiente (dato pubblico)"],
+  list_en:["<b>Hypothesised input</b> · energy class, consumption data, technical documentation","<b>Hypothesised output</b> · coherent trace between declared requirement and verified requirement","<b>Related real product</b> · ESG mortgages, Legambiente partnership (public data)"]},
+ {name:"Leasing e factoring",name_en:"Leasing and factoring",ic:"▲",n:27,
+  note:"Ipotizziamo una lettura che segua la fornitura nel tempo, non solo al momento della delibera, segnalando scostamenti rispetto a quanto previsto.",
+  note_en:"We hypothesise a reading that follows the supply over time, not only at the moment of approval, flagging deviations from what was planned.",
+  list:["<b>Input ipotizzati</b> · piano di rientro, stato dei pagamenti, garanzie","<b>Output ipotizzato</b> · segnalazione precoce di scostamenti, non una decisione automatica","<b>Prodotto reale collegato</b> · Leasing, Factoring (dato pubblico)"],
+  list_en:["<b>Hypothesised input</b> · repayment plan, payment status, guarantees","<b>Hypothesised output</b> · early flagging of deviations, not an automatic decision","<b>Related real product</b> · Leasing, Factoring (public data)"]},
+ {name:"Bilancio di Coerenza e Missione",name_en:"Coherence and Mission Report",ic:"●",n:19,
+  note:"Ipotizziamo una rete che raccolga in continuo le evidenze che oggi confluiscono nel Bilancio di Coerenza, invece di ricostruirle a fine anno.",
+  note_en:"We hypothesise a network that continuously gathers the evidence that today feeds the Coherence Report, instead of reconstructing it at year end.",
+  list:["<b>Input ipotizzati</b> · iniziative territoriali, dati di impatto, rendicontazione ESG","<b>Output ipotizzato</b> · traccia verificabile, pronta per la rendicontazione periodica","<b>Prodotto reale collegato</b> · Bilancio di Coerenza e Missione (dato pubblico)"],
+  list_en:["<b>Hypothesised input</b> · territorial initiatives, impact data, ESG reporting","<b>Hypothesised output</b> · verifiable trace, ready for periodic reporting","<b>Related real product</b> · Coherence and Mission Report (public data)"]}
 ];
 
+var LANG=(function(){try{var s=localStorage.getItem('bcc_lang');if(s==='it'||s==='en')return s;}catch(e){}return 'it';})();
 var sel=0;
+
 function renderTabs(){
  var host=$("#objTabs");host.innerHTML="";
  OBJS.forEach(function(o,i){
   var b=document.createElement("button");
   b.type="button";b.className="obj"+(i===sel?" sel":"");
-  b.innerHTML='<div class="ic">'+o.ic+'</div><h4>'+o.name+'</h4><p>Motori ipotizzati: '+o.n+'</p>';
+  var name=LANG==='en'?o.name_en:o.name;
+  var motoriLbl=LANG==='en'?'Hypothesised engines: ':'Motori ipotizzati: ';
+  b.innerHTML='<div class="ic">'+o.ic+'</div><h4>'+name+'</h4><p>'+motoriLbl+o.n+'</p>';
   b.addEventListener("click",function(){sel=i;renderTabs();applySel(true);});
   host.appendChild(b);
  });
@@ -197,12 +262,28 @@ function applySel(flash){
  while(Object.keys(lit).length<o.n){lit[Math.floor(rr()*220)]=1;}
  cells.forEach(function(c,i){c.classList.toggle("on",!!lit[i]);});
  $("#rwCount").textContent=o.n;
- $("#rwNote").innerHTML=o.note+' <span class="bdg sim">ipotesi dimostrativa</span>';
- $("#rwTitle").textContent=o.name;
- $("#rwList").innerHTML=o.list.map(function(l){return "<div>"+l+"</div>";}).join("");
+ var note=LANG==='en'?o.note_en:o.note, badge=T.bSim[LANG];
+ $("#rwNote").innerHTML=note+' <span class="bdg sim">'+badge+'</span>';
+ $("#rwTitle").textContent=LANG==='en'?o.name_en:o.name;
+ var list=LANG==='en'?o.list_en:o.list;
+ $("#rwList").innerHTML=list.map(function(l){return "<div>"+l+"</div>";}).join("");
 }
 
-renderTabs();buildGrid();applySel(false);
+function applyLang(){
+ document.documentElement.lang=LANG;
+ $$("[data-t]").forEach(function(el){
+  var k=el.getAttribute("data-t");
+  if(T[k])el.innerHTML=T[k][LANG];
+ });
+ $("#lit").classList.toggle("on",LANG==='it');
+ $("#len").classList.toggle("on",LANG==='en');
+ renderTabs();applySel(false);
+}
+
+$("#lit").addEventListener("click",function(){LANG='it';try{localStorage.setItem('bcc_lang','it');}catch(e){}applyLang();});
+$("#len").addEventListener("click",function(){LANG='en';try{localStorage.setItem('bcc_lang','en');}catch(e){}applyLang();});
+
+buildGrid();applyLang();
 
 var robs=new IntersectionObserver(function(es){
  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");robs.unobserve(e.target);}});
